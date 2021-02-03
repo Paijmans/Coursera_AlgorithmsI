@@ -11,22 +11,14 @@ class QuickUnion{
     // Connected component of each element.
     std::vector<int> connected;
     // Size of each connected component.
-    std::vector<int> connected_size;   
+    std::vector<int> connected_size;
 
     public:
-    // Constructor of QuickUnion.
-    QuickUnion(unsigned n): N(n)
+    // Constructors of QuickUnion.
+    QuickUnion() {}; 
+    QuickUnion(unsigned n)
     {
-        // Initialized vector of connected components.
-        connected.resize(N);
-        connected_size.resize(N);
-        for(unsigned i=0; i<N; i++) 
-        {
-            // Every element is its own connected component.
-            connected[i] =  i;
-            // Every connected component has size 1.
-            connected_size[i] = 1;
-        }
+        InitializeConnected(n);
     }
 
     // Connect elements p and q.
@@ -40,6 +32,9 @@ class QuickUnion{
 
     // Print number of elements in each connected component.
     void PrintConnected();
+
+    // Initialize the connected components.
+    void InitializeConnected(unsigned& n);
 };
 
 

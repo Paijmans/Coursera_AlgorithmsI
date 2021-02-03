@@ -8,6 +8,22 @@
 
 using namespace std;
 
+// Initialize syste with n components only connected to themselves.
+void QuickUnion::InitializeConnected(unsigned& n)
+{
+    // Initialized vector of connected components.
+    N = n;
+    connected.resize(N);
+    connected_size.resize(N);
+    for(unsigned i=0; i<N; i++) 
+    {
+        // Every element is its own connected component.
+        connected[i] =  i;
+        // Every connected component has size 1.
+        connected_size[i] = 1;
+    }
+}
+
 // Connect elements p and q.
 void QuickUnion::Union(const unsigned& p, const unsigned& q)
 {
