@@ -36,7 +36,4 @@ class QuickUnion{
     // Initialize the connected components.
     void InitializeConnected(unsigned& n);
 };
-
-
-
 #endif
